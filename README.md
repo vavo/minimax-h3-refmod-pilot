@@ -1,5 +1,7 @@
 # RefMod Pilot
 
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-vavo-5F7FFF?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/vavo) [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor%20on-GitHub-24292F?style=for-the-badge&logo=github)](https://github.com/sponsors/vavo) [![Support on Patreon](https://img.shields.io/badge/Support%20on-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/vavo)
+
 Simple ComfyUI workflows for MiniMax H3 character references, by LoRA Pilot.
 
 The inference canvas has four elements:
@@ -12,6 +14,17 @@ The inference canvas has four elements:
 The original RefMod loader stays on the main canvas so its management buttons remain available. Model loading, reference encoding, sampling and decoding live inside the Scene subgraph. Open that subgraph to reach the advanced settings. RefMod Pilot is a workflow kit, not another custom Python node.
 
 Each element has its own color. The Markdown README includes a clickable LoRA Pilot banner loaded from lorapilot.com; the image needs internet access and adds no Python dependency. The original loader also exposes upstream advanced controls.
+
+## Workflows
+
+**Create a RefMod:** select your photo folder and save a reusable reference.
+The screenshot shows the prepared Orange Robot creator; its dataset is still unset.
+
+[![RefMod creator workflow](docs/images/refmod-creator.jpg)](workflows/Orange-Robot-RefMod-Creator.json)
+
+**Generate a video:** choose references, edit the scene and settings, and view the output.
+
+[![RefMod inference workflow](docs/images/refmod-inference.jpg)](workflows/RefMod-Pilot-Inference.json)
 
 ## Install
 
@@ -96,3 +109,9 @@ Development preview. The original generation path passed live text/vision encodi
 ## Credits
 
 Built on [ComfyUI](https://github.com/Comfy-Org/ComfyUI), [ComfyUI-MiniMaxH3Mod](https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod) by Luisacaotica, and [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes). RefMod Pilot supplies workflow configuration and usability guidance; the RefMod implementation comes from upstream. No upstream Python implementation or model weights are vendored here.
+
+---
+
+**Part of Lora Pilot family**
+
+[www.lorapilot.com](https://www.lorapilot.com) · [YouTube: Stable Diffusion for Masses](https://www.youtube.com/@StableDiffusionforMasses)
