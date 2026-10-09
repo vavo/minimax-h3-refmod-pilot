@@ -67,3 +67,20 @@ repository.
 - The original loader exposes its advanced fields; in the tested Nodes 2.0 UI,
   unused slot fields can also remain visible. Add/remove updates the slot state,
   but this upstream display behavior makes the loader taller.
+
+## Browser photo upload
+
+- Installed the RefMod Pilot frontend extension on the pod and verified its
+  registration after restarting ComfyUI. Opened a fresh browser page to load it.
+- Used the Upload photos file picker to upload two non-personal test images. The
+  UI reported two photos ready, populated an isolated relative input folder, and
+  set max_items to two. No RefMod extraction was run for these test images.
+- Selected an unreadable PNG and confirmed a visible error with the previous
+  folder preserved. Restored the robot template's unset folder and count of eight.
+- Six automated tests passed with `node --test tests/upload.test.mjs`, covering
+  validation, duplicate filenames, partial failure, destination checks,
+  cancellation and supported extensions.
+- Inspected the upload button/drop area in the live creator and updated its
+  README screenshot. File-picker interaction was tested in the Codex in-app
+  browser; OS drag-and-drop and Chrome/Edge/Firefox/Safari were not separately
+  exercised. The extension uses standard file APIs, without a browser add-on.
