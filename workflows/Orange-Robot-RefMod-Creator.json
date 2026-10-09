@@ -13,7 +13,7 @@
       ],
       "size": [
         490,
-        220
+        360
       ],
       "flags": {},
       "order": 0,
@@ -44,7 +44,7 @@
         16,
         1280
       ],
-      "title": "1 | SELECT CONSISTENT ROBOT PHOTOS",
+      "title": "1 | UPLOAD ROBOT PHOTOS",
       "widgets_values_named": {
         "folder": "SET_CONSISTENT_ROBOT_DATASET_HERE",
         "max_items": 8,
@@ -59,7 +59,7 @@
       "type": "VAELoader",
       "pos": [
         40,
-        450
+        600
       ],
       "size": [
         490,
@@ -192,7 +192,7 @@
       "mode": 0,
       "properties": {},
       "widgets_values": [
-        "[![LoRA Pilot](https://lorapilot.com/og-lora-pilot-studio.png)](https://lorapilot.com/)\n\n## Orange Robot RefMod Creator\n**Prepared only. The consistent dataset is not selected yet.**\n\n1. Put 5\u20138 selected views of the **same robot** in a dedicated folder. Use separate still images, not a labelled contact sheet. Captions are not needed.\n2. Replace `SET_CONSISTENT_ROBOT_DATASET_HERE` in node 1 with that folder's path. The loader takes the first eight media files alphabetically; it does not choose the best views.\n3. Keep the supplied settings and click **Run**. The placeholder is deliberately not an empty path: empty would load ComfyUI's input folder.\n\n### Output\n`models/refmods/lorapilot_orange_robot_consistent_v1.safetensors`\n\nOn LoRA Pilot this is normally under `/workspace/`. Change the name before another run if you want to keep both versions; the same name replaces the previous file.\n\n### Use it in a video\nClick **Refresh RefMods** in the inference workflow, then select the new file. Multiple photos become one stacked video-kind reference, normally `<Video 1>` when used alone. A single image produces `<Picture 1>`. Check **Reference map** after encoding.\n\n### Settings\nFull Reference \u00b7 768 px \u00b7 zero refinement steps \u00b7 no pooling or merge \u00b7 one copy \u00b7 no token truncation. Only the H3 video VAE is needed for creation; no LoRA training or video diffusion runs here.\n\n### Photo consistency\nChoose front, three-quarter, side and wider views with matching anatomy and markings. Keep similar aspect ratios and the whole robot inside the frame: this creator crops to the first image's aspect ratio. More images increase inference cost.\n\n[RefMod Pilot setup and guide](https://github.com/vavo/minimax-h3-refmod-pilot)\n"
+        "[![LoRA Pilot](https://lorapilot.com/og-lora-pilot-studio.png)](https://lorapilot.com/)\n\n## Orange Robot RefMod Creator\n**Prepared only. The consistent dataset is not selected yet.**\n\n1. Click **Upload photos**, or drop 1\u20138 selected views of the **same robot** onto the upload area in node 1. Use separate still images, not a labelled contact sheet.\n2. Wait for **photos ready**. The folder and photo count are set automatically. PNG, JPG, WebP or BMP; up to 20 MB each. Captions are not needed.\n3. Keep the supplied settings and click **Run**. No terminal or server path is required. Existing server folders can still be entered manually.\n\n### Output\n`models/refmods/lorapilot_orange_robot_consistent_v1.safetensors`\n\nOn LoRA Pilot this is normally under `/workspace/`. Change the name before another run if you want to keep both versions; the same name replaces the previous file.\n\n### Use it in a video\nClick **Refresh RefMods** in the inference workflow, then select the new file. Multiple photos become one stacked video-kind reference, normally `<Video 1>` when used alone. A single image produces `<Picture 1>`. Check **Reference map** after encoding.\n\n### Settings\nFull Reference \u00b7 768 px \u00b7 zero refinement steps \u00b7 no pooling or merge \u00b7 one copy \u00b7 no token truncation. Only the H3 video VAE is needed for creation; no LoRA training or video diffusion runs here.\n\n### Photo consistency\nChoose front, three-quarter, side and wider views with matching anatomy and markings. Keep similar aspect ratios and the whole robot inside the frame: this creator crops to the first image's aspect ratio. More images increase inference cost.\n\n[RefMod Pilot setup and guide](https://github.com/vavo/minimax-h3-refmod-pilot)\n\n\nUPLOAD SETUP: Install the RefMod Pilot repository under ComfyUI/custom_nodes, restart ComfyUI, then refresh the page. This is a ComfyUI extension, not a browser add-on. Uploading does not run the workflow.\n"
       ],
       "title": "READ ME | DATASET STILL REQUIRED",
       "color": "#865b27",
@@ -200,7 +200,7 @@
       "inputs": [],
       "outputs": [],
       "widgets_values_named": {
-        "text": "[![LoRA Pilot](https://lorapilot.com/og-lora-pilot-studio.png)](https://lorapilot.com/)\n\n## Orange Robot RefMod Creator\n**Prepared only. The consistent dataset is not selected yet.**\n\n1. Put 5\u20138 selected views of the **same robot** in a dedicated folder. Use separate still images, not a labelled contact sheet. Captions are not needed.\n2. Replace `SET_CONSISTENT_ROBOT_DATASET_HERE` in node 1 with that folder's path. The loader takes the first eight media files alphabetically; it does not choose the best views.\n3. Keep the supplied settings and click **Run**. The placeholder is deliberately not an empty path: empty would load ComfyUI's input folder.\n\n### Output\n`models/refmods/lorapilot_orange_robot_consistent_v1.safetensors`\n\nOn LoRA Pilot this is normally under `/workspace/`. Change the name before another run if you want to keep both versions; the same name replaces the previous file.\n\n### Use it in a video\nClick **Refresh RefMods** in the inference workflow, then select the new file. Multiple photos become one stacked video-kind reference, normally `<Video 1>` when used alone. A single image produces `<Picture 1>`. Check **Reference map** after encoding.\n\n### Settings\nFull Reference \u00b7 768 px \u00b7 zero refinement steps \u00b7 no pooling or merge \u00b7 one copy \u00b7 no token truncation. Only the H3 video VAE is needed for creation; no LoRA training or video diffusion runs here.\n\n### Photo consistency\nChoose front, three-quarter, side and wider views with matching anatomy and markings. Keep similar aspect ratios and the whole robot inside the frame: this creator crops to the first image's aspect ratio. More images increase inference cost.\n\n[RefMod Pilot setup and guide](https://github.com/vavo/minimax-h3-refmod-pilot)\n"
+        "text": "[![LoRA Pilot](https://lorapilot.com/og-lora-pilot-studio.png)](https://lorapilot.com/)\n\n## Orange Robot RefMod Creator\n**Prepared only. The consistent dataset is not selected yet.**\n\n1. Click **Upload photos**, or drop 1\u20138 selected views of the **same robot** onto the upload area in node 1. Use separate still images, not a labelled contact sheet.\n2. Wait for **photos ready**. The folder and photo count are set automatically. PNG, JPG, WebP or BMP; up to 20 MB each. Captions are not needed.\n3. Keep the supplied settings and click **Run**. No terminal or server path is required. Existing server folders can still be entered manually.\n\n### Output\n`models/refmods/lorapilot_orange_robot_consistent_v1.safetensors`\n\nOn LoRA Pilot this is normally under `/workspace/`. Change the name before another run if you want to keep both versions; the same name replaces the previous file.\n\n### Use it in a video\nClick **Refresh RefMods** in the inference workflow, then select the new file. Multiple photos become one stacked video-kind reference, normally `<Video 1>` when used alone. A single image produces `<Picture 1>`. Check **Reference map** after encoding.\n\n### Settings\nFull Reference \u00b7 768 px \u00b7 zero refinement steps \u00b7 no pooling or merge \u00b7 one copy \u00b7 no token truncation. Only the H3 video VAE is needed for creation; no LoRA training or video diffusion runs here.\n\n### Photo consistency\nChoose front, three-quarter, side and wider views with matching anatomy and markings. Keep similar aspect ratios and the whole robot inside the frame: this creator crops to the first image's aspect ratio. More images increase inference cost.\n\n[RefMod Pilot setup and guide](https://github.com/vavo/minimax-h3-refmod-pilot)\n\n\nUPLOAD SETUP: Install the RefMod Pilot repository under ComfyUI/custom_nodes, restart ComfyUI, then refresh the page. This is a ComfyUI extension, not a browser add-on. Uploading does not run the workflow.\n"
       }
     }
   ],

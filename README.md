@@ -11,7 +11,7 @@ The inference canvas has four elements:
 3. **OUTPUT**: preview and save the video with audio.
 4. **READ ME**: instructions beside the controls.
 
-The original RefMod loader stays on the main canvas so its management buttons remain available. Model loading, reference encoding, sampling and decoding live inside the Scene subgraph. Open that subgraph to reach the advanced settings. RefMod Pilot is a workflow kit, not another custom Python node.
+The original RefMod loader stays on the main canvas so its management buttons remain available. Model loading, reference encoding, sampling and decoding live inside the Scene subgraph. Open that subgraph to reach the advanced settings. RefMod Pilot provides workflows and a small ComfyUI frontend extension for photo uploads. No browser add-on is required.
 
 Each element has its own color. The Markdown README includes a clickable LoRA Pilot banner loaded from lorapilot.com; the image needs internet access and adds no Python dependency. The original loader also exposes upstream advanced controls.
 
@@ -27,6 +27,18 @@ The screenshot shows the prepared Orange Robot creator; its dataset is still uns
 [![RefMod inference workflow](docs/images/refmod-inference.jpg)](workflows/RefMod-Pilot-Inference.json)
 
 ## Install
+
+Install RefMod Pilot once to enable **Upload photos** and drag-and-drop:
+
+1. [Download this repository as a ZIP](https://github.com/vavo/minimax-h3-refmod-pilot/archive/refs/heads/main.zip).
+2. Extract its folder into `ComfyUI/custom_nodes/` (the folder must contain `__init__.py` directly).
+3. Restart ComfyUI and refresh its browser page.
+
+This installs into ComfyUI, not Chrome or Firefox. The uploader uses standard browser
+file APIs, uploads to your ComfyUI server, and needs no extra Python packages.
+Its existing H3 dependencies below are still required. You can also install this
+repository by URL through a ComfyUI Manager version that supports Git URL installs.
+
 
 Use a current ComfyUI with native MiniMax H3 support and subgraphs. Development targets ComfyUI 0.34.0 and frontend 1.49.6.
 
@@ -69,15 +81,19 @@ Open [Character-RefMod-Creator.json](workflows/Character-RefMod-Creator.json) in
 For the planned consistent orange robot example, use
 [Orange-Robot-RefMod-Creator.json](workflows/Orange-Robot-RefMod-Creator.json).
 It is prepared with Full Reference at 768 px and the output name
-`lorapilot_orange_robot_consistent_v1`. Replace its explicit dataset placeholder
-with the selected consistent robot photo folder before running. No robot dataset
+`lorapilot_orange_robot_consistent_v1`. Upload the selected consistent robot photos, or replace its explicit dataset
+placeholder with their server folder before running. No robot dataset
 or finished robot RefMod is included yet.
 
-1. Put 5–8 selected photos of one character directly in a folder. One image also works. Captions are unnecessary.
-2. Enter the folder path and a unique character name. Reusing a name replaces its saved RefMod.
+1. Click **Upload photos** in the first node, or drop 1–8 selected photos onto its upload area. Wait for “photos ready”. Captions are unnecessary.
+2. Enter a unique character name. Reusing a name replaces its saved RefMod.
 3. Run. The file saves under `ComfyUI/models/refmods/` (normally `/workspace/models/refmods/` on LoRA Pilot).
 
-The loader takes the first eight media files alphabetically; it does not rank image quality. Use still images with similar aspect ratios and keep faces inside the crop. The simple creator crops references to the first photo's aspect ratio and stacks them into one video-kind reference when using multiple photos.
+Uploads accept PNG, JPG, WebP and BMP, up to 20 MB each. Each batch gets its own folder and preserves selection order; the workflow sets the folder and photo count automatically. ZIPs, HEIC and videos are not accepted by this photo uploader.
+
+If an upload fails, the previous folder is restored. Retry the selection; partially uploaded files remain unused in `ComfyUI/input/refmod-pilot/`. Photo uploads do not start encoding or video generation.
+
+Advanced users can still enter an existing server folder. That loader takes the first eight media files alphabetically; it does not rank image quality. Use still images with similar aspect ratios and keep faces inside the crop. The simple creator crops references to the first photo's aspect ratio and stacks them into one video-kind reference when using multiple photos.
 
 Full Reference mode preserves the VAE reference rather than compressing it to a small grid. No LoRA or H3 model weights are trained. More reference photos increase the cost of subsequent video generation.
 

@@ -13,7 +13,7 @@
       ],
       "size": [
         520,
-        220
+        360
       ],
       "flags": {},
       "order": 0,
@@ -44,14 +44,14 @@
         16,
         1280
       ],
-      "title": "1 | CHANGE PHOTO FOLDER"
+      "title": "1 | UPLOAD CHARACTER PHOTOS"
     },
     {
       "id": 2,
       "type": "VAELoader",
       "pos": [
         40,
-        470
+        600
       ],
       "size": [
         520,
@@ -149,7 +149,7 @@
       "type": "Note",
       "pos": [
         40,
-        650
+        790
       ],
       "size": [
         560,
@@ -160,7 +160,7 @@
       "mode": 0,
       "properties": {},
       "widgets_values": [
-        "CHARACTER REFMOD CREATOR\n\n1. Choose 5-8 clear photos of ONE character. One image works, but multiple views are useful. Include front, three-quarter, profile and a wider shot. Avoid blur, heavy filters, sunglasses and near-duplicates. Captions are not needed.\n2. Put those photos directly in one folder on the pod, e.g. /workspace/datasets/alex_refmod. This loader takes the first 8 media files alphabetically; it does not choose the best photos. Use only selected still images here.\n3. Set the folder in node 1 and a unique name such as alex_h3_v1 in node 3. Existing files with the same name are replaced when saved.\n4. Leave the other settings as supplied and click Run. This VAE-only creation workflow does not load H3's video generation model or train a LoRA.\n5. The saved file is /workspace/models/refmods/<name>.safetensors. In your generation workflow, refresh RefMods and select it in Load H3 RefMods.\n\nFull Reference preserves detail. Refinement Steps, pooling and merge are unused in this mode. concept_type=identity is descriptive metadata; it does not train facial recognition. max_tokens=0 prevents dropping reference views to fit a cap, so more photos increase generation cost.\n\nCROP NOTE: this simple creator stacks multiple photos into ONE video-kind reference, cropping them to the first photo's aspect ratio. Use matching aspect ratios and keep faces well inside the frame. With a single photo it creates an image-kind reference.\n\nPROMPT LABELS: with H3 RefMod Text Encode, a multi-photo file made here normally appears as <Video 1>, not eight separate <Picture> labels. Use the encoder's reference_map output to check. Separate-image bundles use Picture labels for each view. Always update the character-reference lines when replacing files.\n"
+        "CHARACTER REFMOD CREATOR\n\n1. Choose 5-8 clear photos of ONE character. One image works, but multiple views are useful. Include front, three-quarter, profile and a wider shot. Avoid blur, heavy filters, sunglasses and near-duplicates. Captions are not needed.\n2. Click Upload photos, or drop 1\u20138 selected photos onto the first node's upload area. Wait for photos ready. PNG, JPG, WebP or BMP; up to 20 MB each. The folder and count are set automatically.\n3. Set a unique name such as alex_h3_v1 in the Create node. Existing files with the same name are replaced when saved.\n4. Leave the other settings as supplied and click Run. This VAE-only creation workflow does not load H3's video generation model or train a LoRA.\n5. The saved file is /workspace/models/refmods/<name>.safetensors. In your generation workflow, refresh RefMods and select it in Load H3 RefMods.\n\nFull Reference preserves detail. Refinement Steps, pooling and merge are unused in this mode. concept_type=identity is descriptive metadata; it does not train facial recognition. max_tokens=0 prevents dropping reference views to fit a cap, so more photos increase generation cost.\n\nCROP NOTE: this simple creator stacks multiple photos into ONE video-kind reference, cropping them to the first photo's aspect ratio. Use matching aspect ratios and keep faces well inside the frame. With a single photo it creates an image-kind reference.\n\nPROMPT LABELS: with H3 RefMod Text Encode, a multi-photo file made here normally appears as <Video 1>, not eight separate <Picture> labels. Use the encoder's reference_map output to check. Separate-image bundles use Picture labels for each view. Always update the character-reference lines when replacing files.\n\n\nUPLOAD SETUP: Install the RefMod Pilot repository under ComfyUI/custom_nodes, restart ComfyUI, then refresh the page. This is a ComfyUI extension, not a browser add-on. Uploading does not run the workflow.\n"
       ],
       "title": "READ ME / four simple steps",
       "color": "#432",
