@@ -49,6 +49,17 @@ Download these weights from [Comfy-Org/MiniMax-H3](https://huggingface.co/Comfy-
 
 The creator only needs the video VAE. The inference workflow needs all four files and saved RefMods under `models/refmods/`. Model licenses and requirements belong to their upstream projects.
 
+## Try the included orange robot
+
+[Download the example package](examples/orange-robot/README.md): a ready-made
+109 KiB RefMod, its source image, and a preconfigured
+[Orange Robot Demo workflow](workflows/Orange-Robot-Demo.json).
+Copy the `.safetensors` file into `ComfyUI/models/refmods/`, open the demo,
+click **Refresh RefMods**, and Run. The usual H3 models and extensions are required.
+
+The demo uses one clear robot from LoRA Pilot's sample dataset. Creation and
+reference encoding passed on the pod; a full demo video has not been rendered.
+
 ## Create a character
 
 Open [Character-RefMod-Creator.json](workflows/Character-RefMod-Creator.json) in ComfyUI.

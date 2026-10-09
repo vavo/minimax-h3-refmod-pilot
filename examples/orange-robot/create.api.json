@@ -1,0 +1,48 @@
+{
+  "1": {
+    "class_type": "MiniMaxH3RefModFolderLoader",
+    "inputs": {
+      "folder": "refmod-pilot-orange-robot",
+      "max_items": 1,
+      "max_frames": 2,
+      "max_edge": 1024
+    }
+  },
+  "2": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "3": {
+    "class_type": "MiniMaxH3RefModExtract",
+    "inputs": {
+      "name": "lorapilot_orange_robot_v1",
+      "mode": "Full Reference",
+      "concept_type": "identity",
+      "background_retention": 0.0,
+      "ref_resolution": 768,
+      "pool_h": 16,
+      "pool_w": 16,
+      "latent_frames": 1,
+      "identity": 0,
+      "merge": false,
+      "motion_only": false,
+      "multiplier": 1,
+      "max_tokens": 0,
+      "description": "LoRA Pilot orange robot example. One front-facing SDXL-generated reference from ceramic_robot_00001_.png. Orange rounded rectangular head, two glossy black eyes, antenna and claw hands. MIT source artwork by Michal Vavak.",
+      "save": true,
+      "refs_bundle": [
+        "1",
+        0
+      ],
+      "vae": [
+        "2",
+        0
+      ],
+      "budget_policy": "error",
+      "extraction_preset": "manual",
+      "subfolder": ""
+    }
+  }
+}
