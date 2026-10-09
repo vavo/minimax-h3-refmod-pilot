@@ -44,6 +44,16 @@ ComfyUI-MiniMaxH3Mod revision `f9462081e28794389b5a6c5067eb327412ad8ee7`.
 Personal photos, prompts, RefMods and raw execution logs are excluded from this
 repository.
 
+## Prepared consistent robot creator
+
+- Opened `Orange-Robot-RefMod-Creator.json` on the pod and checked the folder,
+  selected H3 VAE, Full Reference mode, 768 px resolution, zero refinement steps,
+  save setting and distinct output name in the UI.
+- The source folder is deliberately `SET_CONSISTENT_ROBOT_DATASET_HERE`, not an
+  empty string (which would select ComfyUI's input directory).
+- Graph links and required inputs were checked against the installed node schema.
+- No dataset has been selected and this prepared workflow has not been executed.
+
 ## Canvas polish and loader controls
 
 - Replaced the character subgraph with the original RefMod loader, retaining the

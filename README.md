@@ -53,6 +53,13 @@ The creator only needs the video VAE. The inference workflow needs all four file
 
 Open [Character-RefMod-Creator.json](workflows/Character-RefMod-Creator.json) in ComfyUI.
 
+For the planned consistent orange robot example, use
+[Orange-Robot-RefMod-Creator.json](workflows/Orange-Robot-RefMod-Creator.json).
+It is prepared with Full Reference at 768 px and the output name
+`lorapilot_orange_robot_consistent_v1`. Replace its explicit dataset placeholder
+with the selected consistent robot photo folder before running. No robot dataset
+or finished robot RefMod is included yet.
+
 1. Put 5–8 selected photos of one character directly in a folder. One image also works. Captions are unnecessary.
 2. Enter the folder path and a unique character name. Reusing a name replaces its saved RefMod.
 3. Run. The file saves under `ComfyUI/models/refmods/` (normally `/workspace/models/refmods/` on LoRA Pilot).

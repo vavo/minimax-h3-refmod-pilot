@@ -1,0 +1,237 @@
+{
+  "id": "4c5a9256-a25d-4f3a-8473-283c126ec451",
+  "revision": 0,
+  "last_node_id": 4,
+  "last_link_id": 2,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "MiniMaxH3RefModFolderLoader",
+      "pos": [
+        40,
+        160
+      ],
+      "size": [
+        490,
+        220
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "refs",
+          "type": "H3_REF_LIST",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3RefModFolderLoader"
+      },
+      "widgets_values": [
+        "SET_CONSISTENT_ROBOT_DATASET_HERE",
+        8,
+        16,
+        1280
+      ],
+      "title": "1 | SELECT CONSISTENT ROBOT PHOTOS",
+      "widgets_values_named": {
+        "folder": "SET_CONSISTENT_ROBOT_DATASET_HERE",
+        "max_items": 8,
+        "max_frames": 16,
+        "max_edge": 1280
+      },
+      "color": "#235b78",
+      "bgcolor": "#183b50"
+    },
+    {
+      "id": 2,
+      "type": "VAELoader",
+      "pos": [
+        40,
+        450
+      ],
+      "size": [
+        490,
+        110
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            2
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "minimax_h3_video_vae_fp16.safetensors"
+      ],
+      "title": "H3 video VAE - leave selected",
+      "color": "#236b56",
+      "bgcolor": "#193f35"
+    },
+    {
+      "id": 3,
+      "type": "MiniMaxH3RefModExtract",
+      "pos": [
+        590,
+        160
+      ],
+      "size": [
+        500,
+        850
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "refs_bundle",
+          "type": "H3_REF_LIST",
+          "link": 1
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mods",
+          "type": "H3_REF_MODS",
+          "links": [],
+          "slot_index": 0
+        },
+        {
+          "name": "details",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3RefModExtract"
+      },
+      "widgets_values": [
+        "lorapilot_orange_robot_consistent_v1",
+        "Full Reference",
+        "identity",
+        0.0,
+        768,
+        16,
+        16,
+        16,
+        0,
+        false,
+        false,
+        1,
+        0,
+        "Multiple views of the same LoRA Pilot orange robot. Consistent character identity.",
+        true,
+        "manual",
+        "",
+        "error"
+      ],
+      "title": "2 | CREATE ROBOT REFMOD",
+      "widgets_values_named": {
+        "name": "lorapilot_orange_robot_consistent_v1",
+        "mode": "Full Reference",
+        "concept_type": "identity",
+        "background_retention": 0.0,
+        "ref_resolution": 768,
+        "pool_h": 16,
+        "pool_w": 16,
+        "latent_frames": 16,
+        "identity": 0,
+        "merge": false,
+        "motion_only": false,
+        "multiplier": 1,
+        "max_tokens": 0,
+        "description": "Multiple views of the same LoRA Pilot orange robot. Consistent character identity.",
+        "save": true,
+        "extraction_preset": "manual",
+        "subfolder": "",
+        "budget_policy": "error"
+      },
+      "color": "#633f88",
+      "bgcolor": "#38264c"
+    },
+    {
+      "id": 4,
+      "type": "MarkdownNote",
+      "pos": [
+        1140,
+        160
+      ],
+      "size": [
+        530,
+        980
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "properties": {},
+      "widgets_values": [
+        "[![LoRA Pilot](https://lorapilot.com/og-lora-pilot-studio.png)](https://lorapilot.com/)\n\n## Orange Robot RefMod Creator\n**Prepared only. The consistent dataset is not selected yet.**\n\n1. Put 5\u20138 selected views of the **same robot** in a dedicated folder. Use separate still images, not a labelled contact sheet. Captions are not needed.\n2. Replace `SET_CONSISTENT_ROBOT_DATASET_HERE` in node 1 with that folder's path. The loader takes the first eight media files alphabetically; it does not choose the best views.\n3. Keep the supplied settings and click **Run**. The placeholder is deliberately not an empty path: empty would load ComfyUI's input folder.\n\n### Output\n`models/refmods/lorapilot_orange_robot_consistent_v1.safetensors`\n\nOn LoRA Pilot this is normally under `/workspace/`. Change the name before another run if you want to keep both versions; the same name replaces the previous file.\n\n### Use it in a video\nClick **Refresh RefMods** in the inference workflow, then select the new file. Multiple photos become one stacked video-kind reference, normally `<Video 1>` when used alone. A single image produces `<Picture 1>`. Check **Reference map** after encoding.\n\n### Settings\nFull Reference \u00b7 768 px \u00b7 zero refinement steps \u00b7 no pooling or merge \u00b7 one copy \u00b7 no token truncation. Only the H3 video VAE is needed for creation; no LoRA training or video diffusion runs here.\n\n### Photo consistency\nChoose front, three-quarter, side and wider views with matching anatomy and markings. Keep similar aspect ratios and the whole robot inside the frame: this creator crops to the first image's aspect ratio. More images increase inference cost.\n\n[RefMod Pilot setup and guide](https://github.com/vavo/minimax-h3-refmod-pilot)\n"
+      ],
+      "title": "READ ME | DATASET STILL REQUIRED",
+      "color": "#865b27",
+      "bgcolor": "#46351e",
+      "inputs": [],
+      "outputs": [],
+      "widgets_values_named": {
+        "text": "[![LoRA Pilot](https://lorapilot.com/og-lora-pilot-studio.png)](https://lorapilot.com/)\n\n## Orange Robot RefMod Creator\n**Prepared only. The consistent dataset is not selected yet.**\n\n1. Put 5\u20138 selected views of the **same robot** in a dedicated folder. Use separate still images, not a labelled contact sheet. Captions are not needed.\n2. Replace `SET_CONSISTENT_ROBOT_DATASET_HERE` in node 1 with that folder's path. The loader takes the first eight media files alphabetically; it does not choose the best views.\n3. Keep the supplied settings and click **Run**. The placeholder is deliberately not an empty path: empty would load ComfyUI's input folder.\n\n### Output\n`models/refmods/lorapilot_orange_robot_consistent_v1.safetensors`\n\nOn LoRA Pilot this is normally under `/workspace/`. Change the name before another run if you want to keep both versions; the same name replaces the previous file.\n\n### Use it in a video\nClick **Refresh RefMods** in the inference workflow, then select the new file. Multiple photos become one stacked video-kind reference, normally `<Video 1>` when used alone. A single image produces `<Picture 1>`. Check **Reference map** after encoding.\n\n### Settings\nFull Reference \u00b7 768 px \u00b7 zero refinement steps \u00b7 no pooling or merge \u00b7 one copy \u00b7 no token truncation. Only the H3 video VAE is needed for creation; no LoRA training or video diffusion runs here.\n\n### Photo consistency\nChoose front, three-quarter, side and wider views with matching anatomy and markings. Keep similar aspect ratios and the whole robot inside the frame: this creator crops to the first image's aspect ratio. More images increase inference cost.\n\n[RefMod Pilot setup and guide](https://github.com/vavo/minimax-h3-refmod-pilot)\n"
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      3,
+      0,
+      "H3_REF_LIST"
+    ],
+    [
+      2,
+      2,
+      0,
+      3,
+      1,
+      "VAE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.62,
+      "offset": [
+        30,
+        20
+      ]
+    }
+  },
+  "version": 0.4
+}
