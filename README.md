@@ -1,8 +1,8 @@
-# RefMod Pilot
+# RefMod Pilot (MiniMax H3 LoRA alternative)
 
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20me%20a%20coffee-vavo-5F7FFF?style=for-the-badge&logo=buy-me-a-coffee&logoColor=white)](https://www.buymeacoffee.com/vavo) [![Sponsor on GitHub](https://img.shields.io/badge/Sponsor%20on-GitHub-24292F?style=for-the-badge&logo=github)](https://github.com/sponsors/vavo) [![Support on Patreon](https://img.shields.io/badge/Support%20on-Patreon-FF424D?style=for-the-badge&logo=patreon&logoColor=white)](https://www.patreon.com/vavo)
 
-Simple ComfyUI workflows for MiniMax H3 character references, by LoRA Pilot.
+Simple and intuitive ComfyUI workflows for MiniMax H3 character references, by LoRA Pilot.
 
 The inference canvas has four elements:
 
@@ -144,7 +144,7 @@ Development preview. The original generation path passed live text/vision encodi
 
 ## Credits
 
-Built on [ComfyUI](https://github.com/Comfy-Org/ComfyUI), [ComfyUI-MiniMaxH3Mod](https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod) by Luisacaotica, and [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes). RefMod Pilot supplies workflow configuration and usability guidance; the RefMod implementation comes from upstream. No upstream Python implementation or model weights are vendored here.
+Built on [ComfyUI](https://github.com/Comfy-Org/ComfyUI), [ComfyUI-MiniMaxH3Mod](https://github.com/Luisacaotica/ComfyUI-MiniMaxH3Mod) by Luisacaotica, and [ComfyUI-KJNodes](https://github.com/kijai/ComfyUI-KJNodes). RefMod Pilot supplies super-easy workflow configuration and usability guidance.
 
 ---
 
