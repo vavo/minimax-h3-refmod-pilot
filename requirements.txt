@@ -1,0 +1,10 @@
+# RefMod Python dependencies; install with the Python that runs ComfyUI.
+# A working ComfyUI installation must already provide its CUDA-compatible torch.
+# Do not replace that torch build with a generic pip install.
+safetensors
+numpy
+Pillow
+
+# Install the ComfyUI-MiniMaxH3Mod extension separately; pip does not add nodes.
+# The inference workflow also needs comfyui-kjnodes and its own requirements.
+# Optional source-video loading backends: opencv-python or imageio.

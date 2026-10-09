@@ -1,0 +1,200 @@
+{
+  "id": "be1e85b1-4ede-4c33-a207-02c277979872",
+  "revision": 0,
+  "last_node_id": 4,
+  "last_link_id": 2,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "MiniMaxH3RefModFolderLoader",
+      "pos": [
+        40,
+        160
+      ],
+      "size": [
+        520,
+        220
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "refs",
+          "type": "H3_REF_LIST",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3RefModFolderLoader"
+      },
+      "widgets_values": [
+        "/workspace/datasets/CHANGE_TO_YOUR_FOLDER",
+        8,
+        16,
+        1280
+      ],
+      "title": "1 | CHANGE PHOTO FOLDER"
+    },
+    {
+      "id": 2,
+      "type": "VAELoader",
+      "pos": [
+        40,
+        470
+      ],
+      "size": [
+        520,
+        100
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            2
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAELoader"
+      },
+      "widgets_values": [
+        "minimax_h3_video_vae_fp16.safetensors"
+      ],
+      "title": "H3 video VAE - leave selected"
+    },
+    {
+      "id": 3,
+      "type": "MiniMaxH3RefModExtract",
+      "pos": [
+        680,
+        160
+      ],
+      "size": [
+        560,
+        850
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "refs_bundle",
+          "type": "H3_REF_LIST",
+          "link": 1
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 2
+        }
+      ],
+      "outputs": [
+        {
+          "name": "mods",
+          "type": "H3_REF_MODS",
+          "links": [],
+          "slot_index": 0
+        },
+        {
+          "name": "details",
+          "type": "STRING",
+          "links": [],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "MiniMaxH3RefModExtract"
+      },
+      "widgets_values": [
+        "my_character_v1",
+        "Full Reference",
+        "identity",
+        0.0,
+        768,
+        16,
+        16,
+        16,
+        0,
+        false,
+        false,
+        1,
+        0,
+        "Reference photos of one character.",
+        true,
+        "manual",
+        "",
+        "error"
+      ],
+      "title": "2 | CHANGE NAME, THEN RUN"
+    },
+    {
+      "id": 4,
+      "type": "Note",
+      "pos": [
+        40,
+        650
+      ],
+      "size": [
+        560,
+        730
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "properties": {},
+      "widgets_values": [
+        "CHARACTER REFMOD CREATOR\n\n1. Choose 5-8 clear photos of ONE character. One image works, but multiple views are useful. Include front, three-quarter, profile and a wider shot. Avoid blur, heavy filters, sunglasses and near-duplicates. Captions are not needed.\n2. Put those photos directly in one folder on the pod, e.g. /workspace/datasets/alex_refmod. This loader takes the first 8 media files alphabetically; it does not choose the best photos. Use only selected still images here.\n3. Set the folder in node 1 and a unique name such as alex_h3_v1 in node 3. Existing files with the same name are replaced when saved.\n4. Leave the other settings as supplied and click Run. This VAE-only creation workflow does not load H3's video generation model or train a LoRA.\n5. The saved file is /workspace/models/refmods/<name>.safetensors. In your generation workflow, refresh RefMods and select it in Load H3 RefMods.\n\nFull Reference preserves detail. Refinement Steps, pooling and merge are unused in this mode. concept_type=identity is descriptive metadata; it does not train facial recognition. max_tokens=0 prevents dropping reference views to fit a cap, so more photos increase generation cost.\n\nCROP NOTE: this simple creator stacks multiple photos into ONE video-kind reference, cropping them to the first photo's aspect ratio. Use matching aspect ratios and keep faces well inside the frame. With a single photo it creates an image-kind reference.\n\nPROMPT LABELS: with H3 RefMod Text Encode, a multi-photo file made here normally appears as <Video 1>, not eight separate <Picture> labels. Use the encoder's reference_map output to check. Separate-image bundles use Picture labels for each view. Always update the character-reference lines when replacing files.\n"
+      ],
+      "title": "READ ME / four simple steps",
+      "color": "#432",
+      "bgcolor": "#653"
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      3,
+      0,
+      "H3_REF_LIST"
+    ],
+    [
+      2,
+      2,
+      0,
+      3,
+      1,
+      "VAE"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.62,
+      "offset": [
+        30,
+        20
+      ]
+    }
+  },
+  "version": 0.4
+}
