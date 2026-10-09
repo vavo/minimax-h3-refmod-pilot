@@ -36,9 +36,9 @@ ComfyUI-MiniMaxH3Mod revision `f9462081e28794389b5a6c5067eb327412ad8ee7`.
 - The new compact workflow has not completed a full diffusion/video render.
   Encoding success does not verify output quality, likeness, identity separation,
   peak sampling memory or total generation time.
-- The multi-photo creator path has not been independently verified end to end
-  in this validation pass. It uses a stacked video-kind reference, unlike the
-  independent-image bundles used in the three-character encoding check.
+- The supplied creator workflow has not been independently verified end to end
+  in this validation pass. Multi-photo creator output uses a stacked video-kind
+  reference, unlike the independent-image bundles used in the encoding check.
 - Compatibility with other ComfyUI and custom-node revisions remains untested.
 
 Personal photos, prompts, RefMods and raw execution logs are excluded from this
@@ -57,15 +57,3 @@ repository.
 - The original loader exposes its advanced fields; in the tested Nodes 2.0 UI,
   unused slot fields can also remain visible. Add/remove updates the slot state,
   but this upstream display behavior makes the loader taller.
-
-## Orange Robot example
-
-- Encoded one unchanged source PNG from LoRA Pilot's MIT sample dataset using the
-  creator's Folder Loader → H3 video VAE → Create H3 RefMod path.
-- Full Reference at 768 pixels produced an image-kind version-4 safetensors file:
-  111,336 bytes, FP16 latent `[1, 24, 1, 48, 48]`, 576 reference tokens.
-- Checked the downloaded file's safetensors header, data length and source-image
-  SHA-256 against the dataset manifest. Package hashes are in its manifest.
-- Loaded the saved file and executed the demo workflow's text/vision encoding.
-  It completed successfully with `<Picture 1> = lorapilot_orange_robot_v1`.
-- The demo's diffusion sampler and video output have not been executed.
