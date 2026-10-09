@@ -84,3 +84,18 @@ repository.
   README screenshot. File-picker interaction was tested in the Codex in-app
   browser; OS drag-and-drop and Chrome/Edge/Firefox/Safari were not separately
   exercised. The extension uses standard file APIs, without a browser add-on.
+
+## R01 robot example
+
+- Selected six full-body views (01, 02, 03, 04, 06, 07) from the user-supplied
+  eight-image R01 dataset. All source images are square, 1254 x 1254 pixels.
+- Installed the inspected MiniMaxH3Mod revision and RefMod Pilot on the new pod;
+  verified the node definitions and existing Python dependencies.
+- Executed the folder creator with Full Reference, 768 px, zero refinement, no
+  token truncation, and six separate source images. ComfyUI reported success in
+  5.724 seconds on an RTX PRO 6000 Blackwell 48 GB MIG instance.
+- Downloaded the saved 664,288-byte safetensors file and checked its header:
+  format version 4, video kind, FP16 latent [1,24,6,48,48], 3,456 tokens.
+  Source image and finished-file SHA-256 hashes are in the example manifest.
+- Added a single-character demo using `<Video 1>`. No full video generation was
+  run; likeness, motion and inference performance are not established.

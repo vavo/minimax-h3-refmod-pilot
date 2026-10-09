@@ -17,8 +17,8 @@ Each element has its own color. The Markdown README includes a clickable LoRA Pi
 
 ## Workflows
 
-**Create a RefMod:** select your photo folder and save a reusable reference.
-The screenshot shows the prepared Orange Robot creator; its dataset is still unset.
+**Create a RefMod:** upload your photos and save a reusable reference.
+The screenshot shows the Orange Robot creator with its upload control.
 
 [![RefMod creator workflow](docs/images/refmod-creator.jpg)](workflows/Orange-Robot-RefMod-Creator.json)
 
@@ -78,12 +78,10 @@ The creator only needs the video VAE. The inference workflow needs all four file
 
 Open [Character-RefMod-Creator.json](workflows/Character-RefMod-Creator.json) in ComfyUI.
 
-For the planned consistent orange robot example, use
+To create another orange robot reference, use
 [Orange-Robot-RefMod-Creator.json](workflows/Orange-Robot-RefMod-Creator.json).
-It is prepared with Full Reference at 768 px and the output name
-`lorapilot_orange_robot_consistent_v1`. Upload the selected consistent robot photos, or replace its explicit dataset
-placeholder with their server folder before running. No robot dataset
-or finished robot RefMod is included yet.
+It starts with an unset photo folder and Full Reference at 768 px.
+A finished R01 example is included below; the source dataset ZIP is not bundled.
 
 1. Click **Upload photos** in the first node, or drop 1–8 selected photos onto its upload area. Wait for “photos ready”. Captions are unnecessary.
 2. Enter a unique character name. Reusing a name replaces its saved RefMod.
@@ -96,6 +94,28 @@ If an upload fails, the previous folder is restored. Retry the selection; partia
 Advanced users can still enter an existing server folder. That loader takes the first eight media files alphabetically; it does not rank image quality. Use still images with similar aspect ratios and keep faces inside the crop. The simple creator crops references to the first photo's aspect ratio and stacks them into one video-kind reference when using multiple photos.
 
 Full Reference mode preserves the VAE reference rather than compressing it to a small grid. No LoRA or H3 model weights are trained. More reference photos increase the cost of subsequent video generation.
+
+## Try the orange robot
+
+1. Download [lpr01robot_r01_v1.safetensors](examples/lpr01robot/lpr01robot_r01_v1.safetensors?raw=true) (649 KiB) and put it in `ComfyUI/models/refmods/`.
+2. Open [Orange-Robot-Demo.json](workflows/Orange-Robot-Demo.json), then click **Refresh RefMods**.
+3. Keep the first slot set to `lpr01robot_r01_v1`, edit the scene, and Run.
+
+![Six selected R01 robot views](examples/lpr01robot/selected-views.jpg)
+
+This example uses six views from the user-provided `r01-eight-image-dataset-v1.zip`
+(`lpr01robot`): front, both front angles, side, back and waving. The redundant rear
+angle and cropped close-up were omitted. The original eight-image dataset is unchanged.
+[Source hashes and settings](examples/lpr01robot/source-manifest.json) record the selection.
+
+Full Reference at 768 px produces one stacked video-kind reference with six latent
+frames and 3,456 tokens. Use `<Video 1>` when it is the only selected RefMod.
+Creation completed in 5.7 seconds on an RTX PRO 6000 Blackwell 48 GB MIG instance;
+this is a single observed encoding time, not a general performance guarantee.
+No model weights were trained. Video likeness and motion remain untested.
+
+The supplied images are synthetic reference-guided R01 views. Minor proportion,
+surface and perspective differences remain; they do not establish exact 3D consistency.
 
 ## Generate a video
 

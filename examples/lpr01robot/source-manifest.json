@@ -1,0 +1,40 @@
+{
+  "dataset": "r01-eight-image-dataset-v1.zip",
+  "trigger": "lpr01robot",
+  "selected": [
+    {
+      "file": "r01_01.png",
+      "sha256": "ead44d9f45ac76844313c1ad42ec2af57333b6f924ef9d9e8065e05e359da67c"
+    },
+    {
+      "file": "r01_02.png",
+      "sha256": "88333bedb661696ec4a36ed78d2895b33455141776f207dde889123a2e081a20"
+    },
+    {
+      "file": "r01_03.png",
+      "sha256": "882f6148c8f2de32b9896b82bba9ca98e5f5887e17d191cd9b7cff85043441d3"
+    },
+    {
+      "file": "r01_04.png",
+      "sha256": "378afb5fbdc0dd6d8efcedca5808de61b679439e40cf57e12cc98cfbe40e2a23"
+    },
+    {
+      "file": "r01_06.png",
+      "sha256": "96c96298e5008fa0a50d8a830852ac9bee3e1fb81af0d58e0d8023126540d164"
+    },
+    {
+      "file": "r01_07.png",
+      "sha256": "2037a72d9148296b26d8ee42a968309a61f0dcac64e793f791d4e69bd5c36a2a"
+    }
+  ],
+  "omitted": {
+    "r01_05.png": "Rear three-quarter overlaps back and side views.",
+    "r01_08.png": "Cropped lower legs; full-body examples prioritized."
+  },
+  "refmod": "lpr01robot_r01_v1.safetensors",
+  "sha256": "633a246eb8eb89b0f789a6a2e2213c076ef7640d6404a078886f85dcdf60f8f3",
+  "resolution": 768,
+  "reference_tokens": 3456,
+  "mode": "Full Reference",
+  "refinement_steps": 0
+}
