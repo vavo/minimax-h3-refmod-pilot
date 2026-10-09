@@ -4,12 +4,14 @@ Simple ComfyUI workflows for MiniMax H3 character references, by LoRA Pilot.
 
 The inference canvas has four elements:
 
-1. **CHARACTERS**: choose up to three RefMods and their strengths.
+1. **CHARACTERS**: choose RefMods and their strengths, with + Add RefMod, Refresh RefMods and RefMod library controls.
 2. **EDIT SCENE HERE**: prompt, aspect ratio, resolution, custom width/height, seconds, seed and steps.
 3. **OUTPUT**: preview and save the video with audio.
 4. **READ ME**: instructions beside the controls.
 
-Model loading, reference encoding, sampling and decoding live inside native ComfyUI subgraphs. Open a subgraph to reach the advanced settings. RefMod Pilot is a workflow kit, not another custom Python node.
+The original RefMod loader stays on the main canvas so its management buttons remain available. Model loading, reference encoding, sampling and decoding live inside the Scene subgraph. Open that subgraph to reach the advanced settings. RefMod Pilot is a workflow kit, not another custom Python node.
+
+Each element has its own color. The Markdown README includes a clickable LoRA Pilot banner loaded from lorapilot.com; the image needs internet access and adds no Python dependency. The original loader also exposes upstream advanced controls.
 
 ## Install
 
@@ -63,7 +65,7 @@ Full Reference mode preserves the VAE reference rather than compressing it to a 
 
 Open [RefMod-Pilot-Inference.json](workflows/RefMod-Pilot-Inference.json).
 
-1. Select your RefMods in **CHARACTERS**. Public downloads start with empty slots.
+1. Select your RefMods in **CHARACTERS**. Public downloads start with three empty slots. Use + Add RefMod for additional slots (up to eight).
 2. Update the character tags and scene in **EDIT SCENE HERE**. Choose size and seconds.
 3. Run. Results appear in **OUTPUT** and save under `ComfyUI/output/video/RefModPilot*` (the pod may map output elsewhere).
 

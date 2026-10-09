@@ -1,26 +1,35 @@
 {
   "id": "89d2dbb4-76ad-49b7-9e39-a7eb53dc7b37",
-  "revision": 0,
+  "revision": 1,
   "last_node_id": 400,
   "last_link_id": 43,
   "nodes": [
     {
       "id": 100,
-      "type": "1a62e600-f8e1-4c35-b6b5-27d0664e243c",
+      "type": "MiniMaxH3RefModsLoader",
       "pos": [
         40,
         120
       ],
       "size": [
-        380,
-        320
+        420,
+        1050
       ],
       "flags": {},
       "order": 0,
       "mode": 0,
       "inputs": [
         {
-          "label": "Character 1",
+          "localized_name": "show_info",
+          "name": "show_info",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "show_info"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_1",
           "name": "mod_1",
           "type": "COMBO",
           "widget": {
@@ -29,7 +38,7 @@
           "link": null
         },
         {
-          "label": "Strength 1",
+          "localized_name": "strength_1",
           "name": "strength_1",
           "type": "FLOAT",
           "widget": {
@@ -38,7 +47,16 @@
           "link": null
         },
         {
-          "label": "Character 2",
+          "localized_name": "copies_1",
+          "name": "copies_1",
+          "type": "INT",
+          "widget": {
+            "name": "copies_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_2",
           "name": "mod_2",
           "type": "COMBO",
           "widget": {
@@ -47,7 +65,7 @@
           "link": null
         },
         {
-          "label": "Strength 2",
+          "localized_name": "strength_2",
           "name": "strength_2",
           "type": "FLOAT",
           "widget": {
@@ -56,7 +74,16 @@
           "link": null
         },
         {
-          "label": "Character 3",
+          "localized_name": "copies_2",
+          "name": "copies_2",
+          "type": "INT",
+          "widget": {
+            "name": "copies_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_3",
           "name": "mod_3",
           "type": "COMBO",
           "widget": {
@@ -65,51 +92,570 @@
           "link": null
         },
         {
-          "label": "Strength 3",
+          "localized_name": "strength_3",
           "name": "strength_3",
           "type": "FLOAT",
           "widget": {
             "name": "strength_3"
           },
           "link": null
+        },
+        {
+          "localized_name": "copies_3",
+          "name": "copies_3",
+          "type": "INT",
+          "widget": {
+            "name": "copies_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_4",
+          "name": "mod_4",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_4",
+          "name": "strength_4",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_4",
+          "name": "copies_4",
+          "type": "INT",
+          "widget": {
+            "name": "copies_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_5",
+          "name": "mod_5",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_5",
+          "name": "strength_5",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_5",
+          "name": "copies_5",
+          "type": "INT",
+          "widget": {
+            "name": "copies_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_6",
+          "name": "mod_6",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_6",
+          "name": "strength_6",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_6",
+          "name": "copies_6",
+          "type": "INT",
+          "widget": {
+            "name": "copies_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_7",
+          "name": "mod_7",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_7",
+          "name": "strength_7",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_7",
+          "name": "copies_7",
+          "type": "INT",
+          "widget": {
+            "name": "copies_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "mod_8",
+          "name": "mod_8",
+          "type": "COMBO",
+          "widget": {
+            "name": "mod_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "strength_8",
+          "name": "strength_8",
+          "type": "FLOAT",
+          "widget": {
+            "name": "strength_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "copies_8",
+          "name": "copies_8",
+          "type": "INT",
+          "widget": {
+            "name": "copies_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "max_total_tokens",
+          "name": "max_total_tokens",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "max_total_tokens"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_1",
+          "name": "components_1",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "components_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_1",
+          "name": "visual_strength_1",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_1",
+          "name": "audio_strength_1",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_1"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_2",
+          "name": "components_2",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "components_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_2",
+          "name": "visual_strength_2",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_2",
+          "name": "audio_strength_2",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_2"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_3",
+          "name": "components_3",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "components_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_3",
+          "name": "visual_strength_3",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_3",
+          "name": "audio_strength_3",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_3"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_4",
+          "name": "components_4",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "components_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_4",
+          "name": "visual_strength_4",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_4",
+          "name": "audio_strength_4",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_4"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_5",
+          "name": "components_5",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "components_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_5",
+          "name": "visual_strength_5",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_5",
+          "name": "audio_strength_5",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_5"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_6",
+          "name": "components_6",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "components_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_6",
+          "name": "visual_strength_6",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_6",
+          "name": "audio_strength_6",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_6"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_7",
+          "name": "components_7",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "components_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_7",
+          "name": "visual_strength_7",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_7",
+          "name": "audio_strength_7",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_7"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "components_8",
+          "name": "components_8",
+          "shape": 7,
+          "type": "COMBO",
+          "widget": {
+            "name": "components_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "visual_strength_8",
+          "name": "visual_strength_8",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "visual_strength_8"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "audio_strength_8",
+          "name": "audio_strength_8",
+          "shape": 7,
+          "type": "FLOAT",
+          "widget": {
+            "name": "audio_strength_8"
+          },
+          "link": null
         }
       ],
       "outputs": [
         {
-          "name": "H3_REF_MODS",
+          "localized_name": "mods",
+          "name": "mods",
           "type": "H3_REF_MODS",
+          "slot_index": 0,
           "links": [
             1
           ]
+        },
+        {
+          "localized_name": "prompt_hint",
+          "name": "prompt_hint",
+          "type": "STRING",
+          "slot_index": 1,
+          "links": []
         }
       ],
       "title": "1 | CHARACTERS",
       "properties": {
-        "cnr_id": "comfy-core",
-        "previewExposures": []
+        "Node name for S&R": "MiniMaxH3RefModsLoader",
+        "refmod_visible_slots": [
+          1,
+          2,
+          3
+        ]
       },
       "widgets_values": [
+        false,
         "(none)",
+        1,
         1,
         "(none)",
         1,
+        1,
         "(none)",
-        1
+        1,
+        1,
+        "(none)",
+        1,
+        1,
+        "(none)",
+        1,
+        1,
+        "(none)",
+        1,
+        1,
+        "(none)",
+        1,
+        1,
+        "(none)",
+        1,
+        1,
+        32768,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        "All",
+        1,
+        1,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ],
       "widgets_values_named": {
+        "show_info": false,
         "mod_1": "(none)",
         "strength_1": 1,
+        "copies_1": 1,
         "mod_2": "(none)",
         "strength_2": 1,
+        "copies_2": 1,
         "mod_3": "(none)",
-        "strength_3": 1
-      }
+        "strength_3": 1,
+        "copies_3": 1,
+        "mod_4": "(none)",
+        "strength_4": 1,
+        "copies_4": 1,
+        "mod_5": "(none)",
+        "strength_5": 1,
+        "copies_5": 1,
+        "mod_6": "(none)",
+        "strength_6": 1,
+        "copies_6": 1,
+        "mod_7": "(none)",
+        "strength_7": 1,
+        "copies_7": 1,
+        "mod_8": "(none)",
+        "strength_8": 1,
+        "copies_8": 1,
+        "max_total_tokens": 32768,
+        "components_1": "All",
+        "visual_strength_1": 1,
+        "audio_strength_1": 1,
+        "components_2": "All",
+        "visual_strength_2": 1,
+        "audio_strength_2": 1,
+        "components_3": "All",
+        "visual_strength_3": 1,
+        "audio_strength_3": 1,
+        "components_4": "All",
+        "visual_strength_4": 1,
+        "audio_strength_4": 1,
+        "components_5": "All",
+        "visual_strength_5": 1,
+        "audio_strength_5": 1,
+        "components_6": "All",
+        "visual_strength_6": 1,
+        "audio_strength_6": 1,
+        "components_7": "All",
+        "visual_strength_7": 1,
+        "audio_strength_7": 1,
+        "components_8": "All",
+        "visual_strength_8": 1,
+        "audio_strength_8": 1,
+        "Remove RefMod 1": null,
+        "Remove RefMod 2": null,
+        "Remove RefMod 3": null,
+        "Remove RefMod 4": null,
+        "Remove RefMod 5": null,
+        "Remove RefMod 6": null,
+        "Remove RefMod 7": null,
+        "Remove RefMod 8": null,
+        "+ Add RefMod": null,
+        "Refresh RefMods": null,
+        "RefMod library": null
+      },
+      "color": "#235b78",
+      "bgcolor": "#183b50"
     },
     {
       "id": 200,
       "type": "ff112fc0-aed2-4b6e-9ae5-9729b46494e6",
       "pos": [
-        470,
+        510,
         120
       ],
       "size": [
@@ -244,18 +790,20 @@
         "seconds": 5,
         "seed": 20261009,
         "steps": 20
-      }
+      },
+      "color": "#633f88",
+      "bgcolor": "#38264c"
     },
     {
       "id": 300,
       "type": "SaveVideo",
       "pos": [
-        1120,
+        1160,
         120
       ],
       "size": [
-        450,
-        126
+        500,
+        260
       ],
       "flags": {},
       "order": 3,
@@ -329,18 +877,20 @@
         "format": "auto",
         "format.codec": "auto",
         "codec": "auto"
-      }
+      },
+      "color": "#236b56",
+      "bgcolor": "#193f35"
     },
     {
       "id": 400,
-      "type": "Note",
+      "type": "MarkdownNote",
       "pos": [
-        40,
-        500
+        1160,
+        440
       ],
       "size": [
-        380,
-        710
+        500,
+        900
       ],
       "flags": {},
       "order": 1,
@@ -350,13 +900,13 @@
       "title": "READ ME",
       "properties": {},
       "widgets_values": [
-        "REFMOD PILOT \u2014 THREE STEPS\n\n1. Choose up to three character RefMods. Leave unused slots at (none). Start with strength 1.\n2. Write the scene and audio, choose an aspect ratio and duration, then Run.\n3. Your video appears in OUTPUT and saves under ComfyUI/output/video/RefModPilot*.\n\nSIZE\nPreset mode: Aspect ratio + Resolution (megapixels) calculate width and height. 0.4 MP is a modest starting point. Enable Custom size to use Width and Height instead; the aspect/MP presets are then ignored. Dimensions round to multiples of 32.\n\nDURATION\nEnter seconds, not frames. Duration is limited to 5\u201315 seconds and rounded up to H3's supported frame grid at 24 fps. Examples: 5s -> 124 frames (~5.17s); 10s -> 243 (~10.13s); 15s -> 362 (~15.08s).\n\nCHARACTER LABELS\nEach bundle may contain several pictures or one stacked video reference. Match your prompt's <Picture n> / <Video n> tags to the references. Changing character slots can change these numbers. Open the Scene subgraph to inspect the Reference map output.\n\nADVANCED\nOpen the Scene subgraph for model selectors, VAE, sampler and memory settings. Creation does not train model weights. Generation quality and likeness depend on references and prompts; more reference images cost more memory and time.\n\nRequires current ComfyUI with MiniMax H3 support, ComfyUI-MiniMaxH3Mod and comfyui-kjnodes. Model weights are separate downloads. See the repository README for installation.\n"
+        "[![LoRA Pilot: Train. Create. Repeat.](https://lorapilot.com/og-lora-pilot-studio.png)](https://lorapilot.com/)\n\n**Made with [LoRA Pilot](https://lorapilot.com/) \u00b7 Your GPU. Your tools. Your workspace.**\n\n### Three steps\n1. Choose your character RefMods. **+ Add RefMod** adds a slot; **Refresh RefMods** reloads the list; **RefMod library** opens the browser. Leave unused slots at `(none)`. Start with strength 1 and copies 1.\n2. Write the scene and audio, choose size and seconds, then Run.\n3. Your video appears in **OUTPUT** and saves under `output/video/RefModPilot*`.\n\n### Size and duration\n**Preset:** aspect ratio + megapixels. Start at 0.4 MP. **Custom size:** enables width/height instead; dimensions round to multiples of 32.\n\n**Duration:** 5\u201315 seconds, rounded up to H3's 24 fps frame grid. 5s \u2192 124 frames; 10s \u2192 243; 15s \u2192 362.\n\n### Character labels\nMatch `<Picture n>` / `<Video n>` tags to your files. Slot numbers may differ from reference numbers. Open the Scene subgraph to inspect **Reference map** after encoding.\n\n### Advanced / setup\nKeep loader defaults unless needed. Open the Scene subgraph for models, sampler and memory settings. More references increase memory and time. RefMod creation does not train model weights.\n\nRequires current ComfyUI, ComfyUI-MiniMaxH3Mod, KJNodes and separate model weights. [Installation and workflow guide](https://github.com/vavo/minimax-h3-refmod-pilot).\n"
       ],
       "widgets_values_named": {
-        "text": "REFMOD PILOT \u2014 THREE STEPS\n\n1. Choose up to three character RefMods. Leave unused slots at (none). Start with strength 1.\n2. Write the scene and audio, choose an aspect ratio and duration, then Run.\n3. Your video appears in OUTPUT and saves under ComfyUI/output/video/RefModPilot*.\n\nSIZE\nPreset mode: Aspect ratio + Resolution (megapixels) calculate width and height. 0.4 MP is a modest starting point. Enable Custom size to use Width and Height instead; the aspect/MP presets are then ignored. Dimensions round to multiples of 32.\n\nDURATION\nEnter seconds, not frames. Duration is limited to 5\u201315 seconds and rounded up to H3's supported frame grid at 24 fps. Examples: 5s -> 124 frames (~5.17s); 10s -> 243 (~10.13s); 15s -> 362 (~15.08s).\n\nCHARACTER LABELS\nEach bundle may contain several pictures or one stacked video reference. Match your prompt's <Picture n> / <Video n> tags to the references. Changing character slots can change these numbers. Open the Scene subgraph to inspect the Reference map output.\n\nADVANCED\nOpen the Scene subgraph for model selectors, VAE, sampler and memory settings. Creation does not train model weights. Generation quality and likeness depend on references and prompts; more reference images cost more memory and time.\n\nRequires current ComfyUI with MiniMax H3 support, ComfyUI-MiniMaxH3Mod and comfyui-kjnodes. Model weights are separate downloads. See the repository README for installation.\n"
+        "text": "[![LoRA Pilot: Train. Create. Repeat.](https://lorapilot.com/og-lora-pilot-studio.png)](https://lorapilot.com/)\n\n**Made with [LoRA Pilot](https://lorapilot.com/) \u00b7 Your GPU. Your tools. Your workspace.**\n\n### Three steps\n1. Choose your character RefMods. **+ Add RefMod** adds a slot; **Refresh RefMods** reloads the list; **RefMod library** opens the browser. Leave unused slots at `(none)`. Start with strength 1 and copies 1.\n2. Write the scene and audio, choose size and seconds, then Run.\n3. Your video appears in **OUTPUT** and saves under `output/video/RefModPilot*`.\n\n### Size and duration\n**Preset:** aspect ratio + megapixels. Start at 0.4 MP. **Custom size:** enables width/height instead; dimensions round to multiples of 32.\n\n**Duration:** 5\u201315 seconds, rounded up to H3's 24 fps frame grid. 5s \u2192 124 frames; 10s \u2192 243; 15s \u2192 362.\n\n### Character labels\nMatch `<Picture n>` / `<Video n>` tags to your files. Slot numbers may differ from reference numbers. Open the Scene subgraph to inspect **Reference map** after encoding.\n\n### Advanced / setup\nKeep loader defaults unless needed. Open the Scene subgraph for models, sampler and memory settings. More references increase memory and time. RefMod creation does not train model weights.\n\nRequires current ComfyUI, ComfyUI-MiniMaxH3Mod, KJNodes and separate model weights. [Installation and workflow guide](https://github.com/vavo/minimax-h3-refmod-pilot).\n"
       },
-      "color": "#432",
-      "bgcolor": "#653"
+      "color": "#865b27",
+      "bgcolor": "#46351e"
     }
   ],
   "links": [
@@ -380,839 +930,6 @@
   "groups": [],
   "definitions": {
     "subgraphs": [
-      {
-        "id": "1a62e600-f8e1-4c35-b6b5-27d0664e243c",
-        "version": 1,
-        "state": {
-          "lastGroupId": 0,
-          "lastNodeId": 400,
-          "lastLinkId": 43,
-          "lastRerouteId": 0
-        },
-        "revision": 0,
-        "config": {},
-        "name": "RefMod Pilot / Characters",
-        "inputNode": {
-          "id": -10,
-          "bounding": [
-            -350,
-            50,
-            128,
-            168
-          ]
-        },
-        "outputNode": {
-          "id": -20,
-          "bounding": [
-            2900,
-            100,
-            134.07421875,
-            68
-          ]
-        },
-        "inputs": [
-          {
-            "id": "766a10cd-45c5-41c5-b267-cfd018e56525",
-            "name": "mod_1",
-            "type": "COMBO",
-            "linkIds": [
-              1
-            ],
-            "label": "Character 1",
-            "pos": [
-              -246,
-              74
-            ]
-          },
-          {
-            "id": "4042a504-cf85-4e20-a6ce-e0b1ea41e8ea",
-            "name": "strength_1",
-            "type": "FLOAT",
-            "linkIds": [
-              2
-            ],
-            "label": "Strength 1",
-            "pos": [
-              -246,
-              94
-            ]
-          },
-          {
-            "id": "fd695e1b-47e7-4818-a473-8aec0a4a2ea5",
-            "name": "mod_2",
-            "type": "COMBO",
-            "linkIds": [
-              3
-            ],
-            "label": "Character 2",
-            "pos": [
-              -246,
-              114
-            ]
-          },
-          {
-            "id": "74bb92bf-6bb5-4f6e-843b-51f7a305fdd5",
-            "name": "strength_2",
-            "type": "FLOAT",
-            "linkIds": [
-              4
-            ],
-            "label": "Strength 2",
-            "pos": [
-              -246,
-              134
-            ]
-          },
-          {
-            "id": "876c29a3-18bc-4526-b076-260496db9784",
-            "name": "mod_3",
-            "type": "COMBO",
-            "linkIds": [
-              5
-            ],
-            "label": "Character 3",
-            "pos": [
-              -246,
-              154
-            ]
-          },
-          {
-            "id": "5b0a18ca-08ac-41e2-96ce-b9679ee15f54",
-            "name": "strength_3",
-            "type": "FLOAT",
-            "linkIds": [
-              6
-            ],
-            "label": "Strength 3",
-            "pos": [
-              -246,
-              174
-            ]
-          }
-        ],
-        "outputs": [
-          {
-            "id": "f2444ed4-418a-4d29-9a4a-3478b0102de4",
-            "name": "H3_REF_MODS",
-            "type": "H3_REF_MODS",
-            "linkIds": [
-              7
-            ],
-            "pos": [
-              2924,
-              124
-            ]
-          }
-        ],
-        "widgets": [],
-        "nodes": [
-          {
-            "id": 1,
-            "type": "MiniMaxH3RefModsLoader",
-            "pos": [
-              0,
-              0
-            ],
-            "size": [
-              420,
-              1646
-            ],
-            "flags": {},
-            "order": 0,
-            "mode": 0,
-            "inputs": [
-              {
-                "localized_name": "show_info",
-                "name": "show_info",
-                "type": "BOOLEAN",
-                "widget": {
-                  "name": "show_info"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "mod_1",
-                "name": "mod_1",
-                "type": "COMBO",
-                "widget": {
-                  "name": "mod_1"
-                },
-                "link": 1
-              },
-              {
-                "localized_name": "strength_1",
-                "name": "strength_1",
-                "type": "FLOAT",
-                "widget": {
-                  "name": "strength_1"
-                },
-                "link": 2
-              },
-              {
-                "localized_name": "copies_1",
-                "name": "copies_1",
-                "type": "INT",
-                "widget": {
-                  "name": "copies_1"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "mod_2",
-                "name": "mod_2",
-                "type": "COMBO",
-                "widget": {
-                  "name": "mod_2"
-                },
-                "link": 3
-              },
-              {
-                "localized_name": "strength_2",
-                "name": "strength_2",
-                "type": "FLOAT",
-                "widget": {
-                  "name": "strength_2"
-                },
-                "link": 4
-              },
-              {
-                "localized_name": "copies_2",
-                "name": "copies_2",
-                "type": "INT",
-                "widget": {
-                  "name": "copies_2"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "mod_3",
-                "name": "mod_3",
-                "type": "COMBO",
-                "widget": {
-                  "name": "mod_3"
-                },
-                "link": 5
-              },
-              {
-                "localized_name": "strength_3",
-                "name": "strength_3",
-                "type": "FLOAT",
-                "widget": {
-                  "name": "strength_3"
-                },
-                "link": 6
-              },
-              {
-                "localized_name": "copies_3",
-                "name": "copies_3",
-                "type": "INT",
-                "widget": {
-                  "name": "copies_3"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "mod_4",
-                "name": "mod_4",
-                "type": "COMBO",
-                "widget": {
-                  "name": "mod_4"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "strength_4",
-                "name": "strength_4",
-                "type": "FLOAT",
-                "widget": {
-                  "name": "strength_4"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "copies_4",
-                "name": "copies_4",
-                "type": "INT",
-                "widget": {
-                  "name": "copies_4"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "mod_5",
-                "name": "mod_5",
-                "type": "COMBO",
-                "widget": {
-                  "name": "mod_5"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "strength_5",
-                "name": "strength_5",
-                "type": "FLOAT",
-                "widget": {
-                  "name": "strength_5"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "copies_5",
-                "name": "copies_5",
-                "type": "INT",
-                "widget": {
-                  "name": "copies_5"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "mod_6",
-                "name": "mod_6",
-                "type": "COMBO",
-                "widget": {
-                  "name": "mod_6"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "strength_6",
-                "name": "strength_6",
-                "type": "FLOAT",
-                "widget": {
-                  "name": "strength_6"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "copies_6",
-                "name": "copies_6",
-                "type": "INT",
-                "widget": {
-                  "name": "copies_6"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "mod_7",
-                "name": "mod_7",
-                "type": "COMBO",
-                "widget": {
-                  "name": "mod_7"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "strength_7",
-                "name": "strength_7",
-                "type": "FLOAT",
-                "widget": {
-                  "name": "strength_7"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "copies_7",
-                "name": "copies_7",
-                "type": "INT",
-                "widget": {
-                  "name": "copies_7"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "mod_8",
-                "name": "mod_8",
-                "type": "COMBO",
-                "widget": {
-                  "name": "mod_8"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "strength_8",
-                "name": "strength_8",
-                "type": "FLOAT",
-                "widget": {
-                  "name": "strength_8"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "copies_8",
-                "name": "copies_8",
-                "type": "INT",
-                "widget": {
-                  "name": "copies_8"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "max_total_tokens",
-                "name": "max_total_tokens",
-                "shape": 7,
-                "type": "INT",
-                "widget": {
-                  "name": "max_total_tokens"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "components_1",
-                "name": "components_1",
-                "shape": 7,
-                "type": "COMBO",
-                "widget": {
-                  "name": "components_1"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "visual_strength_1",
-                "name": "visual_strength_1",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "visual_strength_1"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "audio_strength_1",
-                "name": "audio_strength_1",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "audio_strength_1"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "components_2",
-                "name": "components_2",
-                "shape": 7,
-                "type": "COMBO",
-                "widget": {
-                  "name": "components_2"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "visual_strength_2",
-                "name": "visual_strength_2",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "visual_strength_2"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "audio_strength_2",
-                "name": "audio_strength_2",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "audio_strength_2"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "components_3",
-                "name": "components_3",
-                "shape": 7,
-                "type": "COMBO",
-                "widget": {
-                  "name": "components_3"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "visual_strength_3",
-                "name": "visual_strength_3",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "visual_strength_3"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "audio_strength_3",
-                "name": "audio_strength_3",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "audio_strength_3"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "components_4",
-                "name": "components_4",
-                "shape": 7,
-                "type": "COMBO",
-                "widget": {
-                  "name": "components_4"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "visual_strength_4",
-                "name": "visual_strength_4",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "visual_strength_4"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "audio_strength_4",
-                "name": "audio_strength_4",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "audio_strength_4"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "components_5",
-                "name": "components_5",
-                "shape": 7,
-                "type": "COMBO",
-                "widget": {
-                  "name": "components_5"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "visual_strength_5",
-                "name": "visual_strength_5",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "visual_strength_5"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "audio_strength_5",
-                "name": "audio_strength_5",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "audio_strength_5"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "components_6",
-                "name": "components_6",
-                "shape": 7,
-                "type": "COMBO",
-                "widget": {
-                  "name": "components_6"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "visual_strength_6",
-                "name": "visual_strength_6",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "visual_strength_6"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "audio_strength_6",
-                "name": "audio_strength_6",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "audio_strength_6"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "components_7",
-                "name": "components_7",
-                "shape": 7,
-                "type": "COMBO",
-                "widget": {
-                  "name": "components_7"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "visual_strength_7",
-                "name": "visual_strength_7",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "visual_strength_7"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "audio_strength_7",
-                "name": "audio_strength_7",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "audio_strength_7"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "components_8",
-                "name": "components_8",
-                "shape": 7,
-                "type": "COMBO",
-                "widget": {
-                  "name": "components_8"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "visual_strength_8",
-                "name": "visual_strength_8",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "visual_strength_8"
-                },
-                "link": null
-              },
-              {
-                "localized_name": "audio_strength_8",
-                "name": "audio_strength_8",
-                "shape": 7,
-                "type": "FLOAT",
-                "widget": {
-                  "name": "audio_strength_8"
-                },
-                "link": null
-              }
-            ],
-            "outputs": [
-              {
-                "localized_name": "mods",
-                "name": "mods",
-                "type": "H3_REF_MODS",
-                "slot_index": 0,
-                "links": [
-                  7
-                ]
-              },
-              {
-                "localized_name": "prompt_hint",
-                "name": "prompt_hint",
-                "type": "STRING",
-                "slot_index": 1,
-                "links": []
-              }
-            ],
-            "title": "Character RefMod loader",
-            "properties": {
-              "Node name for S&R": "MiniMaxH3RefModsLoader",
-              "refmod_visible_slots": [
-                1,
-                2,
-                3
-              ]
-            },
-            "widgets_values": [
-              false,
-              "(none)",
-              1,
-              1,
-              "(none)",
-              1,
-              1,
-              "(none)",
-              1,
-              1,
-              "(none)",
-              1,
-              1,
-              "(none)",
-              1,
-              1,
-              "(none)",
-              1,
-              1,
-              "(none)",
-              1,
-              1,
-              "(none)",
-              1,
-              1,
-              32768,
-              "All",
-              1,
-              1,
-              "All",
-              1,
-              1,
-              "All",
-              1,
-              1,
-              "All",
-              1,
-              1,
-              "All",
-              1,
-              1,
-              "All",
-              1,
-              1,
-              "All",
-              1,
-              1,
-              "All",
-              1,
-              1,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null,
-              null
-            ],
-            "widgets_values_named": {
-              "show_info": false,
-              "mod_1": "(none)",
-              "strength_1": 1,
-              "copies_1": 1,
-              "mod_2": "(none)",
-              "strength_2": 1,
-              "copies_2": 1,
-              "mod_3": "(none)",
-              "strength_3": 1,
-              "copies_3": 1,
-              "mod_4": "(none)",
-              "strength_4": 1,
-              "copies_4": 1,
-              "mod_5": "(none)",
-              "strength_5": 1,
-              "copies_5": 1,
-              "mod_6": "(none)",
-              "strength_6": 1,
-              "copies_6": 1,
-              "mod_7": "(none)",
-              "strength_7": 1,
-              "copies_7": 1,
-              "mod_8": "(none)",
-              "strength_8": 1,
-              "copies_8": 1,
-              "max_total_tokens": 32768,
-              "components_1": "All",
-              "visual_strength_1": 1,
-              "audio_strength_1": 1,
-              "components_2": "All",
-              "visual_strength_2": 1,
-              "audio_strength_2": 1,
-              "components_3": "All",
-              "visual_strength_3": 1,
-              "audio_strength_3": 1,
-              "components_4": "All",
-              "visual_strength_4": 1,
-              "audio_strength_4": 1,
-              "components_5": "All",
-              "visual_strength_5": 1,
-              "audio_strength_5": 1,
-              "components_6": "All",
-              "visual_strength_6": 1,
-              "audio_strength_6": 1,
-              "components_7": "All",
-              "visual_strength_7": 1,
-              "audio_strength_7": 1,
-              "components_8": "All",
-              "visual_strength_8": 1,
-              "audio_strength_8": 1,
-              "Remove RefMod 1": null,
-              "Remove RefMod 2": null,
-              "Remove RefMod 3": null,
-              "Remove RefMod 4": null,
-              "Remove RefMod 5": null,
-              "Remove RefMod 6": null,
-              "Remove RefMod 7": null,
-              "Remove RefMod 8": null,
-              "+ Add RefMod": null,
-              "Refresh RefMods": null,
-              "RefMod library": null
-            }
-          }
-        ],
-        "groups": [],
-        "links": [
-          {
-            "id": 1,
-            "origin_id": -10,
-            "origin_slot": 0,
-            "target_id": 1,
-            "target_slot": 1,
-            "type": "COMBO"
-          },
-          {
-            "id": 2,
-            "origin_id": -10,
-            "origin_slot": 1,
-            "target_id": 1,
-            "target_slot": 2,
-            "type": "FLOAT"
-          },
-          {
-            "id": 3,
-            "origin_id": -10,
-            "origin_slot": 2,
-            "target_id": 1,
-            "target_slot": 4,
-            "type": "COMBO"
-          },
-          {
-            "id": 4,
-            "origin_id": -10,
-            "origin_slot": 3,
-            "target_id": 1,
-            "target_slot": 5,
-            "type": "FLOAT"
-          },
-          {
-            "id": 5,
-            "origin_id": -10,
-            "origin_slot": 4,
-            "target_id": 1,
-            "target_slot": 7,
-            "type": "COMBO"
-          },
-          {
-            "id": 6,
-            "origin_id": -10,
-            "origin_slot": 5,
-            "target_id": 1,
-            "target_slot": 8,
-            "type": "FLOAT"
-          },
-          {
-            "id": 7,
-            "origin_id": 1,
-            "origin_slot": 0,
-            "target_id": -20,
-            "target_slot": 0,
-            "type": "H3_REF_MODS"
-          }
-        ],
-        "extra": {}
-      },
       {
         "id": "ff112fc0-aed2-4b6e-9ae5-9729b46494e6",
         "version": 1,

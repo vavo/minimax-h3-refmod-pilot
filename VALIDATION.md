@@ -43,3 +43,17 @@ ComfyUI-MiniMaxH3Mod revision `f9462081e28794389b5a6c5067eb327412ad8ee7`.
 
 Personal photos, prompts, RefMods and raw execution logs are excluded from this
 repository.
+
+## Canvas polish and loader controls
+
+- Replaced the character subgraph with the original RefMod loader, retaining the
+  same selected files, strengths and connection to the Scene subgraph.
+- Tested Add RefMod, removed the temporary empty slots, refreshed the file list,
+  and opened the library successfully (five files listed on the test pod).
+- Inspected the four different node colors in ComfyUI.
+- Verified the linked LoRA Pilot OG image rendered at its source size of
+  1730 × 909 pixels inside the Markdown README node.
+- No additional dependency or full video render was required for these UI changes.
+- The original loader exposes its advanced fields; in the tested Nodes 2.0 UI,
+  unused slot fields can also remain visible. Add/remove updates the slot state,
+  but this upstream display behavior makes the loader taller.
